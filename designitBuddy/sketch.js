@@ -80,6 +80,7 @@ function setup() {
   _7Slider = createSlider(1, 100, 1);
   _8Slider = createSlider(1, 100, 1);
 
+
   _1Slider.class('range-slider__range');
   _2Slider.class('range-slider__range');
   _3Slider.class('range-slider__range');
@@ -89,6 +90,8 @@ function setup() {
   _7Slider.class('range-slider__range');
   _8Slider.class('range-slider__range');
 
+
+
   _1Slider.changed(classify);
   _2Slider.changed(classify);
   _3Slider.changed(classify);
@@ -97,6 +100,7 @@ function setup() {
   _6Slider.changed(classify);
   _7Slider.changed(classify);
   _8Slider.changed(classify);
+
   /*
   _1Slider.changed(function ping() {
       console.log(_1Slider.value());
@@ -135,17 +139,17 @@ function setup() {
 
 
 
-    skillP5.position(200, windowHeight-300);
-  _5Slider.position(200, windowHeight-250);
+    skillP5.position(width/2, windowHeight-300);
+  _5Slider.position(width/2, windowHeight-250);
 
-    skillP6.position(200, windowHeight-230);
-  _6Slider.position(200, windowHeight-180);
+    skillP6.position(width/2, windowHeight-230);
+  _6Slider.position(width/2, windowHeight-180);
 
-  skillP7.position(200, windowHeight-160);
-  _7Slider.position(200, windowHeight-110);
+  skillP7.position(width/2, windowHeight-160);
+  _7Slider.position(width/2, windowHeight-110);
 
-    skillP8.position(200, windowHeight-90);
-    _8Slider.position(200, windowHeight-40);
+    skillP8.position(width/2, windowHeight-90);
+    _8Slider.position(width/2, windowHeight-40);
 
 
 
@@ -173,14 +177,29 @@ function setup() {
   //color: #000000;
   //letter-spacing: 0;
 
+
+/*
+  font-family: "HelveticaNeueLTStd-Bd";
+  src: url("HelveticaNeueLTStd-Bd.otf");
+}
+@font-face {
+  font-family: "HelveticaNeueLTStd-Blk";
+  src: url("HelveticaNeueLTStd-Blk.otf");
+}
+@font-face {
+  font-family: "HelveticaNeueLTStd-Roman";
+  src: url("HelveticaNeueLTStd-Roman.otf");
+*/
+
   labelResults.style("color","#000000");
 
   labelResults.style("text-align", "initial");
   labelResults.style("width", "100%");
   labelResults.style("align-self", "flex-start");
   labelResults.style("white-space", "pre-wrap");
-  labelResults.style("font-family", "Helvetica Neue LT Std");
-  labelResults.style("font-weight", "800");
+  labelResults.style("font-family", "HelveticaNeueLTStd-Blk");
+  //labelResults.style("font-family", "Helvetica Neue LT Std");
+  //labelResults.style("font-weight", "800");
   labelResults.style("font-size", "22px");
   labelResults.style("line-height", "1.3");
 }
@@ -209,6 +228,7 @@ function classify() {
         Storytelling: _7Slider.value(),
         Leadership: _8Slider.value()
     }
+
 
     valSum = 0;
 
@@ -274,7 +294,7 @@ function gotResults(error, results) {
     resString += name3 + " | Match " + name3Fit.toFixed(2);
 
     labelResults.html(resString);
-    classify();
+    //classify();
 
   }
 }
