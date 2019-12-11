@@ -69,7 +69,9 @@ function setup() {
   */
 
   labelResults = createP('Results:');
-  labelResults.position(25, 200);
+  //labelResults.position(25, 200);
+  let hPos = windowHeight * 0.26;
+  labelResults.position(25, hPos);
 
   _1Slider = createSlider(1, 100, 1);
   _2Slider = createSlider(1, 100, 1);
