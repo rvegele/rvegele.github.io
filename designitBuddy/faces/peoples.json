@@ -1,0 +1,160 @@
+{
+    "people": [
+        {
+            "name": "Adam",
+            "picture": "Adam.jpg"
+        },
+        {
+            "name": "Alecio",
+            "picture": "Alecio.jpg"
+        },
+        {
+            "name": "Alfred",
+            "picture": "Alfred.jpg"
+        },
+        {
+            "name": "Ali",
+            "picture": "Ali.jpg"
+        },
+        {
+            "name": "Amanda",
+            "picture": "Amanda.jpg"
+        },
+        {
+            "name": "Anna-Carin",
+            "picture": "Anna-Carin.jpg"
+        },
+        {
+            "name": "Andreij",
+            "picture": "Andreij.jpg"
+        },
+        {
+            "name": "Anne",
+            "picture": "Anne.jpg"
+        },
+        {
+            "name": "Åsa",
+            "picture": "Åsa.jpg"
+        },
+        {
+            "name": "Bianca",
+            "picture": "Bianca.jpg"
+        },
+        {
+            "name": "David L",
+            "picture": "David L.jpg"
+        },
+        {
+            "name": "David S",
+            "picture": "David S.jpg"
+        },
+        {
+            "name": "Elin",
+            "picture": "Elin.jpg"
+        },
+        {
+            "name": "Erik",
+            "picture": "Erik.jpg"
+        },
+        {
+            "name": "Graciela",
+            "picture": "Graciela.jpg"
+        },
+        {
+            "name": "Hanna",
+            "picture": "Hanna.jpg"
+        },
+        {
+            "name": "Jeff",
+            "picture": "Jeff.jpg"
+        },
+        {
+            "name": "Joel",
+            "picture": "Joel.jpg"
+        },
+        {
+            "name": "Jon",
+            "picture": "Jon.jpg"
+        },
+        {
+            "name": "Lorenzo",
+            "picture": "Lorenzo.jpg"
+        },
+        {
+            "name": "Lucas O",
+            "picture": "Lucas O.jpg"
+        },
+        {
+            "name": "Lucas F",
+            "picture": "Lucas F.jpg"
+        },
+        {
+            "name": "Magda",
+            "picture": "Magda.jpg"
+        },
+        {
+            "name": "Maria",
+            "picture": "Maria.jpg"
+        },
+        {
+            "name": "Matilda",
+            "picture": "Matilda.jpg"
+        },
+        {
+            "name": "Naz",
+            "picture": "Naz.jpg"
+        },
+        {
+            "name": "Nina",
+            "picture": "Nina.jpg"
+        },
+        {
+            "name": "Olle",
+            "picture": "Olle.jpg"
+        },
+        {
+            "name": "Paul",
+            "picture": "Paul.jpg"
+        },
+        {
+            "name": "Pernilla",
+            "picture": "Pernilla.jpg"
+        },
+        {
+            "name": "Philip",
+            "picture": "Philip.jpg"
+        },
+        {
+            "name": "Rachel",
+            "picture": "Rachel.jpg"
+        },
+        {
+            "name": "Regi",
+            "picture": "Regi.jpg"
+        },
+        {
+            "name": "Shae",
+            "picture": "Shae.jpg"
+        },
+        {
+            "name": "Stefanie",
+            "picture": "Stefanie.jpg"
+        },
+        {
+            "name": "Stefano",
+            "picture": "Stefano.jpg"
+        },
+        {
+            "name": "Teresa",
+            "picture": "Teresa.jpg"
+        },
+        {
+            "name": "Victor M",
+            "picture": "Victor M.jpg"
+        },
+        {
+            "name": "Viktor R",
+            "picture": "Viktor R.jpg"
+        }
+    ]
+}
