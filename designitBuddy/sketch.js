@@ -131,7 +131,7 @@ function setup() {
   skillP7.class('skillClass');
   skillP8.class('skillClass');
 
-  valueDescriptor = createP('Select Required Skills (Low - High)');
+  valueDescriptor = createP('Task Skill Requirement (Low - High)');
   valueDescriptor.class('skillDescriptor');
   valueDescriptor.position(25, windowHeight-325);
 
@@ -252,7 +252,7 @@ function classify() {
     valSum += sliderInputs.Leadership;
 
     if (valSum <= 8) {
-        labelResults.html("Select criteria.");
+        labelResults.html("Select task criteria.");
         // classify();
     } else if (valSum >= 800){
         labelResults.html("Adam | Match: 100.00");
@@ -299,7 +299,7 @@ function gotResults(error, results) {
     name2Fit = results[1].confidence * 100 / fitCalc;
     name3Fit = results[2].confidence * 100 / fitCalc;
 
-    resString += "The perfect match for you:";
+    resString += "Person for the job:";
     resString += "<br>";
     resString += "<br>";
     resString += name1 + " | Match: " + name1Fit.toFixed(2);
