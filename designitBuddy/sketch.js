@@ -128,30 +128,30 @@ function setup() {
   skillP8.class('skillClass');
 
   skillP1.position(25, windowHeight-300);
-  _1Slider.position(25, windowHeight-250);
+  _1Slider.position(25, windowHeight-260);
 
    skillP2.position(25, windowHeight-230);
-  _2Slider.position(25, windowHeight-180);
+  _2Slider.position(25, windowHeight-190);
 
     skillP3.position(25, windowHeight-160);
-  _3Slider.position(25, windowHeight-110);
+  _3Slider.position(25, windowHeight-120);
 
   skillP4.position(25, windowHeight-90);
-  _4Slider.position(25, windowHeight-40);
+  _4Slider.position(25, windowHeight-50);
 
 
 
     skillP5.position(width/2, windowHeight-300);
-  _5Slider.position(width/2, windowHeight-250);
+  _5Slider.position(width/2, windowHeight-260);
 
     skillP6.position(width/2, windowHeight-230);
-  _6Slider.position(width/2, windowHeight-180);
+  _6Slider.position(width/2, windowHeight-190);
 
   skillP7.position(width/2, windowHeight-160);
-  _7Slider.position(width/2, windowHeight-110);
+  _7Slider.position(width/2, windowHeight-120);
 
     skillP8.position(width/2, windowHeight-90);
-    _8Slider.position(width/2, windowHeight-40);
+    _8Slider.position(width/2, windowHeight-50);
 
 
 
