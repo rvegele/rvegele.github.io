@@ -19,6 +19,8 @@ let name2Fit = 0;
 let name3Fit = 0;
 
 let valSum = 0;
+let valueDescriptor;
+let matched;
 
 function preload() {
 
@@ -82,7 +84,6 @@ function setup() {
   _7Slider = createSlider(1, 100, 1);
   _8Slider = createSlider(1, 100, 1);
 
-
   _1Slider.class('range-slider__range');
   _2Slider.class('range-slider__range');
   _3Slider.class('range-slider__range');
@@ -109,6 +110,9 @@ function setup() {
   });
   */
 
+
+
+
   skillP1 = createP('Research');
   skillP2 = createP('Concept Dev.');
   skillP3 = createP('Prototyping');
@@ -126,6 +130,10 @@ function setup() {
   skillP6.class('skillClass');
   skillP7.class('skillClass');
   skillP8.class('skillClass');
+
+  valueDescriptor = createP('Select Required Skills (Low - High)');
+  valueDescriptor.class('skillDescriptor');
+  valueDescriptor.position(25, windowHeight-325);
 
   skillP1.position(25, windowHeight-300);
   _1Slider.position(25, windowHeight-260);
@@ -291,6 +299,9 @@ function gotResults(error, results) {
     name2Fit = results[1].confidence * 100 / fitCalc;
     name3Fit = results[2].confidence * 100 / fitCalc;
 
+    resString += "The perfect match for you:";
+    resString += "<br>";
+    resString += "<br>";
     resString += name1 + " | Match: " + name1Fit.toFixed(2);
     resString += "<br>";
     resString += name2 + " | Match " + name2Fit.toFixed(2);
