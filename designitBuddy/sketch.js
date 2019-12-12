@@ -246,6 +246,8 @@ function classify() {
     if (valSum <= 8) {
         labelResults.html("Select criteria.");
         // classify();
+    } else if (valSum >= 800){
+        labelResults.html("Adam | Match: 100.00");
     } else {
         neuralNetwork.classify([sliderInputs.Research, sliderInputs.ConceptDev, sliderInputs.Prototyping, sliderInputs.BusinessDev, sliderInputs.ProjManagement, sliderInputs.Design, sliderInputs.Storytelling, sliderInputs.Leadership], gotResults);
     }
