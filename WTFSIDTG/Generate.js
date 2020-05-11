@@ -339,6 +339,8 @@ function pluralize(word) {
 		return 'geese';
 	case 'fish':
 		return 'fish';
+	case 'ice-cream':
+		return 'ice-cream';
 	case 'human':
 		return 'humans';
 	case 'fish':

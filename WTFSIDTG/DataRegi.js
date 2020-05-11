@@ -22,20 +22,21 @@ data = `
 
 ----------------- SENTENCE -----------------
 #template:
+Get a grip on yourself! Write a book about @activity@ @setting@
+Draw a picture of <a> @character:nopost@ @setting@
 Call a friend and and pretend to be <a> @character:nopost@ @goal@
-How about you just go [watch, learn about, do] some fucking @activity@
+How about [watching, learning, doing] some @activity@
+Do some daydreaming about @activity@
 Feeling @mood@? Go and [make, build] <a> @buildable@
 Sort some @thing:plural@ while @activity@
 Maybe you should try @activity@
 Maybe you should try [cooking, boiling, baking, frying] some @food:plural@
 Feeling @mood@? Give @activity@ a go
 Give a chance to some @mood@ @activity@
-Get a grip on yourself! Go do @activity@ @setting@
-Draw a picture of <a> @character:nopost@ @setting@
 Put on <a> @outfit@ and start @activity@
 It's probably a good time to do @activity@ because @goal_why@
 How about you put on <a> @outfit@ and pretend you're <a> @character:nopost@ @goal@
-Find <a> @thing@ and <a> @thing@ and try to build <a> @buildable@
+Find <a> @thing@ and <a> @thing@ and try building <a> @buildable@
 #end
 
 ----------------- OUTFITS -----------------
@@ -79,7 +80,6 @@ cross [the road, a busy intersection, the galaxy, the ocean]
 learn [photography, to play an instrument, to cook, to stop caring what others think]
 found a new [religion, city, colony, school, guild, cult]
 start a new life [on mars, in the country, in the city, on the moon, as a shepherd]
-escape from @character:npc@
 [gain the respect of @character:npc@, win the affection of @character:npc@]
 rescue @character:npc@
 #end
@@ -102,10 +102,11 @@ tent
 ----------------- ACTIVITY -----------------
 #activity:
 fishing
-daydreaming about some [@mood@ @character:plural@]
+daydreaming
 racing
 gambling
 singing
+archeology
 cooking
 dancing
 #end
@@ -226,7 +227,7 @@ John Oliver
 on <a> @setting_description@ [planet, spaceship, moon, star, rainbow, island, train, boat, mountain, rollercoaster, street, motorbike, bicycle, shipwreck, bouncy castle]
 in <a> @setting_description@ [city, warehouse, graveyard, village, kingdom, sewer, shopping mall, nightclub, cave, labyrinth, park, parking lot, kitchen]
 in <a> @setting_description@ [casino, library, junkyard, basement, dungeon, prison, tavern, resturant, cinema, valley, mansion, forest, jungle, office, hotel]
-in the [distant future, distance past, recent past, near future, month of December, week before Christmas]
+in the [distant future, distant past, recent past, near future, month of December, week before Christmas]
 [in an alternate reality, in outer space, underwater, underground, in summer, in winter, in spring, in autumn]
 inside [your head, a computer, a submarine, a dream, a nightmare, a bunker, a dumpster]
 #end
