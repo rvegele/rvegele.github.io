@@ -9,7 +9,9 @@ category_names = [
 'outfit',
 'goal_why',
 'goal',
-'goal_prefix'
+'goal_prefix',
+'setting',
+'setting_description'
 ];
 
 data = `
@@ -28,7 +30,8 @@ Maybe you should try @activity@
 Maybe you should try [cooking, boiling, baking, frying] some @food:plural@
 Feeling @mood@? Give @activity@ a go
 Give a chance to some @mood@ @activity@
-Get a grip on yourself! Go do @activity@ while SETTING
+Get a grip on yourself! Go do @activity@ @setting@
+Draw a picture of <a> @character:nopost@ @setting@
 Put on <a> @outfit@ and start @activity@
 It's probably a good time to do @activity@ because @goal_why@
 How about you put on <a> @outfit@ and pretend you're <a> @character:nopost@ @goal@
@@ -216,5 +219,74 @@ plumber
 electrician
 mechanic
 John Oliver
+#end
+
+----------------- SETTINGS (a game set... / that takes place...) -----------------
+#setting:
+on <a> @setting_description@ [planet, spaceship, moon, star, rainbow, island, train, boat, mountain, rollercoaster, street, motorbike, bicycle, shipwreck, bouncy castle]
+in <a> @setting_description@ [city, warehouse, graveyard, village, kingdom, sewer, shopping mall, nightclub, cave, labyrinth, park, parking lot, kitchen]
+in <a> @setting_description@ [casino, library, junkyard, basement, dungeon, prison, tavern, resturant, cinema, valley, mansion, forest, jungle, office, hotel]
+in the [distant future, distance past, recent past, near future, month of December, week before Christmas]
+[in an alternate reality, in outer space, underwater, underground, in summer, in winter, in spring, in autumn]
+inside [your head, a computer, a submarine, a dream, a nightmare, a bunker, a dumpster]
+#end
+
+Note: describes a location
+#setting_description:
+tiny
+microscopic
+enormous
+spooky
+alien
+futuristic
+ancient
+forgotten
+mysterious
+forbidden
+dangerous
+holy
+bustling
+creepy
+abandoned
+popular
+strange-smelling
+hypnotic
+radioactive
+colourful
+never-ending
+strangely-decorated
+tastefully-decorated
+rat-infested
+lively
+vibrant
+uninhabited
+poorly-decorated
+astonishing
+critically-acclaimed
+beautiful
+boring
+deadly
+grubby
+exotic
+fabulous
+glamorous
+gloomy
+well-hidden
+undiscovered
+jolly
+luxurious
+quaint
+quirky
+old-fashioned
+unfashionable
+modern
+flying
+floating
+sinking
+burning
+mystical
+magical
+frozen
+royal
 #end
 `;
