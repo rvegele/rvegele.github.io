@@ -309,6 +309,10 @@ function randomChance(probability) {
 function indefiniteArticle(word) {
 	word = word.trim();
 
+	if( word[0] === word[0].toUpperCase() ) {
+		return '';
+	}
+
 	// exceptions:
 	if (word.startsWith('one') || word.startsWith('uni')) {
 		return 'a';
