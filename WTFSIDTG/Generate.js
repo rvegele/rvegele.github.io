@@ -7,6 +7,7 @@ let character_post_description = '';
 
 window.onload = function onLoad() {
 	// Store list of entries by category name
+	//Maybe you should try singing some @mood@ tunes to at least make yourself feel @mood@
 	for (let i = 0; i < category_names.length; i ++) {
 		name = category_names[i];
 		categories[name] = getCategory(name);
@@ -42,7 +43,7 @@ function fillInTemplate(template) {
 		}
 		switch (generator) {
 			case 'activity':
-      	replacement = pickRandom('activity');
+      	replacement = pickActivity(parameters);
         break;
 			case 'food':
 				replacement = generateFood(parameters);
@@ -61,7 +62,7 @@ function fillInTemplate(template) {
 				replacement = pickRandom('character_description');
 				break;
 			case 'goal':
-				replacement = generateGoal();
+				replacement = generateGoal(parameters);
 				break;
 			case 'goal_why':
 				replacement = pickRandom('goal_why');
@@ -76,6 +77,10 @@ function fillInTemplate(template) {
 				replacement = pickRandom('mood');
 				//replacement = generateMood();
 				break;
+			case 'mood_self':
+					replacement = pickRandom('mood_self');
+					//replacement = generateMood();
+					break;
 			case 'outfit':
 				replacement = pickRandom('outfit');
 				break;
@@ -106,7 +111,6 @@ function fillInTemplate(template) {
 
 	// pick conjugation of verb based on character being singular or multiple. E.g. (is,are)
 	if (template.includes('(')) {
-
 		let options_list = getTextBetweenTags(template, '(', ')').split(',');
 		let index = (character_is_group)?1:0;
 		let option = options_list[index].trim();
@@ -121,9 +125,39 @@ function fillInTemplate(template) {
 
 // ------------------------------------ GENERATORS ------------------------------------
 // returns a random character name (+ chance of random description)
+function pickActivity(parameters){
+	let nohaving = parameters.includes('nohaving');
+	if (nohaving) {
+		let activity = pickRandom('activity');
+		if (activity.includes('having'))	{
+			return activity.substr(activity.indexOf(" ") + 1);
+		}
+		return activity;
+	}
+	return pickRandom('activity');
+}
 
 function genChar(parameters) {
 	let make_group = parameters.includes('plural');
+
+	// for NPC
+
+	let is_npc = parameters.includes('npc');
+	let pre_desc = pickRandomOrNone('character_description', 0.6);
+	let chance_of_group = .5;
+	let chance_make_group = randomChance(chance_of_group);
+
+	//let allow_post_desc = !parameters.includes('nopost');
+	//let post_desc_chance = (allow_post_desc)?(pre_desc?0.25:0.8):0;
+	//character_post_description = pickRandomOrNone('character_description_post', post_desc_chance);
+
+	if (is_npc) {
+		character_is_group = chance_make_group;
+		if (character_is_group) {
+				character_post_description = character_post_description;
+				return '<a> ' + pickRandom('group_name') + ' of ' + pre_desc + ' ' + pluralize(pickRandom('character'));// + ' ' + character_post_description + ' ';
+		}
+	}
 
 	if (make_group) {
 		return pluralize(pickRandom('character'));
@@ -161,13 +195,18 @@ function generateCharacter(parameters) {
 	return result;
 }
 
-function generateGoal() {
+function generateGoal(parameters) {
+	let noprefix = parameters.includes('noprefix');
+
 	let prefix = pickRandom('goal_prefix');
 
 	// Avoid awkward phrasing like: you play as a zombie who is addicted to brains who wants to leave the planet
 	// Instead change to: you play as a zombie who is addicted to brains and wants to leave the planet
 	if (character_post_description.includes('who') || character_post_description.includes('that')) {
 		prefix = prefix.replace('who', 'and');
+	}
+	if (noprefix) {
+		return pickRandom('goal');
 	}
 
 	return prefix + ' ' + pickRandom('goal');
@@ -207,6 +246,10 @@ function generateSetting() {
 
 function generateMood() {
     return pickRandomOrNone('mood', 0.3);
+}
+
+function generateMoodSelf() {
+    return pickRandomOrNone('mood_self', 0.3);
 }
 
 function generateThing(parameters) {
@@ -313,6 +356,10 @@ function indefiniteArticle(word) {
 		return '';
 	}
 
+	if (word.startsWith ('the')) {
+		return 'the';
+	}
+
 	// exceptions:
 	if (word.startsWith('one') || word.startsWith('uni')) {
 		return 'a';
@@ -332,8 +379,8 @@ function indefiniteArticle(word) {
 
 // Plural rules for given word list. Will need to be expanded if new words are added.
 // TODOD: Maybe replace with this?: https://github.com/blakeembrey/pluralize
+/*
 function pluralize(word) {
-	// exceptions:
 	switch (word) {
 	case 'goose':
 		return 'geese';
@@ -341,12 +388,26 @@ function pluralize(word) {
 		return 'fish';
 	case 'ice-cream':
 		return 'ice-cream';
+	case 'vegan ice-cream':
+			return 'vegan ice-cream';
+	case 'sauerkraut':
+			return 'sauerkraut';
 	case 'human':
 		return 'humans';
 	case 'fish':
 		return word;
 	case 'thief':
 		return 'thieves';
+	case 'ducktape':
+		return 'ducktape';
+	case 'glue':
+		return 'glue';
+	case 'mud':
+			return 'mud';
+	case 'ice':
+			return 'ice';
+	case 'fabric':
+			return 'fabric';
 	default:
 		// general rules:
 		if (word.substr(-2) == 'ey') {
@@ -364,10 +425,10 @@ function pluralize(word) {
 		if (word.substr(-5) == 'child') {
 			return word + 'ren';
 		}
-
 		return word + 's';
 	}
-}
+
+}*/
 
 function formatOutput(result) {
 	result = result.trim();
