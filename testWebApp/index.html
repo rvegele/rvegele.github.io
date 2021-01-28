@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <!--<meta name="viewport" content="viewport-fit=auto, user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="noodl-app.png">
+    <title>spirit_importer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        img {
+            -webkit-user-drag: none;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+
+    </style>
+</head>
+<body>
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+
+<div id="root" style="display: flex; width:100%; height: 100%; overflow: hidden; position: fixed;"></div>
+
+<script src="react.production.min.js"></script>
+<script src="react-dom.production.min.js"></script>
+
+
+
+<script type="application/javascript">
+    window.__noodl_modules = [];
+    window.Noodl = {
+        defineModule:function(m) {
+            window.__noodl_modules.push(m);
+        }
+    }
+    window.projectData = {"settings":{"htmlTitle":"spirit_importer"},"components":[{"name":"/App","nodes":[{"id":"eacc74e7-4dce-2baf-354b-8070e2b2b872","type":"Group","parameters":{"backgroundColor":"#FFFFFF"},"ports":[{"name":"width","type":{"name":"number","units":["%","px","vw"],"defaultUnit":"%"},"plug":"input","group":"Dimensions","displayName":"Width","default":100,"index":11},{"name":"height","type":{"name":"number","units":["%","px","vh"],"defaultUnit":"%"},"plug":"input","group":"Dimensions","displayName":"Height","default":100,"index":12},{"name":"flexWrap","type":{"name":"enum","enums":[{"label":"Off","value":"nowrap"},{"label":"On","value":"wrap"},{"label":"On Reverse","value":"wrap-reverse"}]},"plug":"input","group":"Layout","displayName":"Multi Line Wrap","default":"nowrap","index":12},{"name":"scrollEnabled","type":"boolean","plug":"input","group":"Scroll","displayName":"Enable Scroll","default":false,"index":54},{"name":"style","type":{"name":"string","codeeditor":"javascript"},"plug":"input","group":"Advanced Style","displayName":"CSS Style","default":"/* example:\n{\n\tbackgroundColor: 'red'\n}\n*/\n\n{\n}","index":100001}],"children":[{"id":"a65464dd-06fc-f7cc-e7ab-0713c372cb93","type":"Image","parameters":{"src":"ica1.png"},"ports":[{"name":"style","type":{"name":"string","codeeditor":"javascript"},"plug":"input","group":"Advanced Style","displayName":"CSS Style","default":"/* example:\n{\n\tbackgroundColor: 'red'\n}\n*/\n\n{\n}","index":100001}],"children":[]}]}],"connections":[],"ports":[],"roots":["eacc74e7-4dce-2baf-354b-8070e2b2b872"],"metadata":{"canvasSize":{"width":"375px","height":"667px"},"canvasPos":{"x":0,"y":0}}}],"rootComponent":"/App","rootNode":"eacc74e7-4dce-2baf-354b-8070e2b2b872","metadata":{"dbCollections":[]}};
+</script>
+
+<script type="text/javascript" src="noodl_modules/noodl-mqtt-module/index.js"></script>
+
+
+<script src="noodl.deploy.js"></script>
+</body>
+</html>
