@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="robots" content="noindex">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=auto">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="format-detection" content="telephone=no">
+    <title>Supex4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        img {
+            -webkit-user-drag: none;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+    </style>
+    <script>
+    	/**
+ * Simulate a key event.
+ * @param {Number} keyCode The keyCode of the key to simulate
+ * @param {String} type (optional) The type of event : down, up or press. The default is down
+ * @param {Object} modifiers (optional) An object which contains modifiers keys { ctrlKey: true, altKey: false, ...}
+ */
+
+/*
+function simulateKey () {
+	if(document.getElementById('proto').src == "https://xd.adobe.com/embed/aa144db6-61c4-4e9e-bd45-ff9dd3eb0ecb-ff47/?fullscreen&hints=off"){
+	document.getElementById('proto').src = "https://xd.adobe.com/embed/aa144db6-61c4-4e9e-bd45-ff9dd3eb0ecb-ff47/screen/0533732a-100c-4d4c-b994-c99f08149b9c?fullscreen&hints=off";
+
+	}else{
+	document.getElementById('proto').src = "https://xd.adobe.com/embed/aa144db6-61c4-4e9e-bd45-ff9dd3eb0ecb-ff47/?fullscreen&hints=off";
+	}
+	}
+  */
+
+  /**
+ * Simulate a key event.
+ * @param {Number} keyCode The keyCode of the key to simulate
+ * @param {String} type (optional) The type of event : down, up or press. The default is down
+ * @param {Object} modifiers (optional) An object which contains modifiers keys { ctrlKey: true, altKey: false, ...}
+ */
+
+function simulateKey (keyCode, type, modifiers) {
+	var evtName = (typeof(type) === "string") ? "key" + type : "keydown";
+	var modifier = (typeof(modifiers) === "object") ? modifier : {};
+
+	var event = document.createEvent("HTMLEvents");
+	event.initEvent(evtName, true, false);
+	event.keyCode = keyCode;
+
+	for (var i in modifiers) {
+		event[i] = modifiers[i];
+	}
+
+	document.dispatchEvent(event);
+}
+
+
+function shift_a_good(keyCode) {
+        //var evt = document.createEvent("KeyboardEvent");
+        let evt = new KeyboardEvent("keydown", {
+          shiftKey: false,
+          key: "A",
+          keyCode: 65
+        });
+        document.dispatchEvent(evt);
+      }
+
+function handleEnd(){
+
+    shift_a_good(65); // a
+    console.log("simulating 65");
+
+    shift_a_good(83);//(83) // s
+    console.log("simulating 83");
+}
+// Setup some tests
+
+var onKeyEvent = function (event) {
+	var state = "pressed";
+
+	if (event.type !== "keypress") {
+		state = event.type.replace("key", "");
+	}
+
+	console.log("Key with keyCode " + event.keyCode + " is " + state);
+
+};
+
+/*
+document.addEventListener("keypress", onKeyEvent, false);
+document.addEventListener("keydown", onKeyEvent, false);
+document.addEventListener("keyup", onKeyEvent, false);
+*/
+document.addEventListener("touchend", handleEnd, false);
+
+
+// Sleep screen
+// https://xd.adobe.com/embed/aa144db6-61c4-4e9e-bd45-ff9dd3eb0ecb-ff47/?fullscreen&amp;hints=off
+
+
+</script>
+  </head>
+  <!--0E1414-->
+  <body>
+
+    <div id="root" style="display: flex; width:100%; height: 100%; overflow: hidden; position: fixed;">
+      <div style="padding: 0px; width: 100%; height: 100%; margin: 0px; overflow: hidden;">
+        <div style="display: flex; position: relative; flex-direction: column; opacity: 1; align-items: flex-start; background-color: rgb(0, 0, 0); width: 100%; height: 100%; flex-shrink: 0;">
+          <div style="display: flex; position: absolute; flex-direction: column; opacity: 1; align-items: center; background-color: #000000; width: 100%; height: 272px; flex-shrink: 0; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);">
+          	<div style="width: 100%;height: 272px; margin-bottom:-272px"></div>
+          	<!--<iframe id="proto" width="480" height="272" src="https://xd.adobe.com/embed/aa144db6-61c4-4e9e-bd45-ff9dd3eb0ecb-ff47/?fullscreen&hints=off" frameborder="0" allowfullscreen></iframe>
+            --><iframe id="proto" width="480" height="272" src="https://xd.adobe.com/embed/aa144db6-61c4-4e9e-bd45-ff9dd3eb0ecb-ff47/?fullscreen&hints=off" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--border-style: solid; border-color: coral;-->
+
+      <!--
+      <iframe width="480" height="272" src="https://xd.adobe.com/embed/108571fa-1d81-4a48-b1fb-2c8ddd338ab6-45d6/?fullscreen&hints=off" frameborder="0" allowfullscreen></iframe>
+      -->
+      <!--
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1)" width="480" height="272" src="https://framer.com/embed/Supex4--qNwjGiEn7GUOmCXqahMN/hfEYVOzGQ?highlights=0" allowfullscreen></iframe>
+      -->
+      </div>
+  </body>
+</html>
